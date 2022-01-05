@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Review Sentiment Analysis</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="login">
+        <h1>Hotel Review Sentiment Analysis</h1>
+        <form method="POST" class="form">
+            <input type="text" name="inp" id="inp" placeholder="Enter your review" required="required" />
+            <button type="submit" class="btn btn-primary btn-block btn-large" name="submit" id="btn">Predict</button>
+        </form></br>   
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Positive Score</th>
+                    <th>Negative Score</th>
+                    <th>Neutral Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{pos}}</td>
+                    <td>{{neg}}</td>
+                    <td>{{neu}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 class="output">Your review is : {{messages}}</h1>
+    </div>
+</body>
+
+</html>
